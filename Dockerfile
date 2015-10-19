@@ -4,9 +4,9 @@ RUN useradd --create-home user
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
   ca-certificates \
-  curl \
+  curl
 
-RUN curl -fSL https://syncthing.net/release-key.txt | apt-key add -
+RUN curl -fSL "https://syncthing.net/release-key.txt" | apt-key add -
 RUN echo "deb http://apt.syncthing.net/ syncthing release" | tee /etc/apt/sources.list.d/syncthing-release.list
 RUN apt-get update && apt-get install -y syncthing
 
