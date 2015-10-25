@@ -6,9 +6,9 @@ echo 'Creating datadir...'
 sudo mkdir -p "${DATADIR}"
 
 echo 'Starting the data container...'
-sudo docker run -v "${DATADIR}/syncthing":/data --read-only \
-  --name syncthing-data derektamsen/syncthing-data
+sudo docker run -v --memory 512m --cpu-shares 512 "${DATADIR}/syncthing":/data \
+  --read-only --name syncthing-data derektamsen/syncthing-data
 
 echo 'Starting the service container...'
-sudo docker run -d --restart on-failure:5 --net host --memory 512m --read-only \
-  --volumes-from syncthing-data --name syncthing derektamsen/syncthing
+sudo docker run -d --restart on-failure:5 --net host --memory 512m --cpu-shares 512 \
+  --read-only --volumes-from syncthing-data --name syncthing derektamsen/syncthing
