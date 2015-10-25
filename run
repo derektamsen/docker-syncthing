@@ -9,5 +9,5 @@ echo 'Starting the data container...'
 sudo docker run -v "${DATADIR}/syncthing":/data --name syncthing-data derektamsen/syncthing-data
 
 echo 'Starting the service container...'
-sudo docker run -d --restart always --net host --volumes-from syncthing-data \
-  --name syncthing derektamsen/syncthing
+sudo docker run -d --restart always --net host --memory 512m \
+  --volumes-from syncthing-data --name syncthing derektamsen/syncthing
