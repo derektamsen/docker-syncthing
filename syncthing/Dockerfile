@@ -13,4 +13,4 @@ RUN apt-get purge -y --auto-remove curl
 EXPOSE 8384 22000 21025 21026
 
 ENTRYPOINT ["syncthing"]
-CMD ["-home", "/data"]
+CMD ["-home", "/data", "-gui-address", "0.0.0.0"]
