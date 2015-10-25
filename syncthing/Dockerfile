@@ -10,9 +10,7 @@ RUN apt-get update && apt-get install -y syncthing
 
 RUN apt-get purge -y --auto-remove curl
 
-EXPOSE 8384
-EXPOSE 22000
-EXPOSE 21025
-EXPOSE 21026
+EXPOSE 8384 22000 21025 21026
 
 ENTRYPOINT ["syncthing"]
+CMD ["-home", "/data"]
