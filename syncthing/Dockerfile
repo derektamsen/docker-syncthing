@@ -1,7 +1,5 @@
 FROM debian:jessie
 
-RUN useradd --create-home user
-
 RUN apt-get update && apt-get install -y --no-install-recommends \
   ca-certificates \
   curl
@@ -12,5 +10,9 @@ RUN apt-get update && apt-get install -y syncthing
 
 RUN apt-get purge -y --auto-remove curl
 
-USER user
+EXPOSE 8384
+EXPOSE 22000
+EXPOSE 21025
+EXPOSE 21026
+
 ENTRYPOINT ["syncthing"]
