@@ -13,7 +13,7 @@ RUN apt-get purge -y --auto-remove curl
 EXPOSE 8384 22000
 EXPOSE 21025/udp 21026/udp
 
-RUN groupadd -r user && useradd -r -g user user
+RUN useradd --system --no-create-home --user-group --shell /bin/false user
 USER user
 
 ENTRYPOINT ["syncthing"]

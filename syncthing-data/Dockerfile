@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-RUN groupadd -r user && useradd -r -g user user
+RUN useradd --system --no-create-home --user-group --shell /bin/false user
 
 RUN mkdir -p /data && \
   chown -R user:user /data
