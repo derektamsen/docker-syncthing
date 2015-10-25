@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo 'Starting the data container...'
+sudo docker run -v /data/syncthing:/data --name syncthing-data derektamsen/syncthing-data
+
+echo 'Starting the service container...'
+sudo docker run -d --restart="always" -p 8384:8384 -p 22000:22000 \
+  -p 21025:21025 -p 21026:21026 --volumes-from syncthing-data \
+  --name syncthing derektamsen/syncthing
