@@ -6,7 +6,7 @@ echo 'Creating datadir...'
 sudo mkdir -p "${DATADIR}"
 
 echo 'Starting the data container...'
-sudo docker run -v --memory 512m --cpu-shares 512 "${DATADIR}/syncthing":/data \
+sudo docker run --memory 512m --cpu-shares 512 -v "${DATADIR}/syncthing":/data \
   --read-only --name syncthing-data derektamsen/syncthing-data
 
 echo 'Starting the service container...'
