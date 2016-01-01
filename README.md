@@ -6,9 +6,7 @@ upgraded without losing any settings or files.
 
 # Starting the syncthing server and data containers
 - clone this repository to your docker host.
-- `./run`
-- If the data container is already started the step will error but continue to
-  starting the syncthing service container.
+- `docker-compose up -d`
 
 # Configure syncthing
 - Launch a browser to the syncthing admin gui: http://<your_docker_host>:8384
