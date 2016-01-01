@@ -13,7 +13,7 @@ app:
   mem_limit: 512m
   cpu_shares: 512
   read_only: true
-  net: HOST
+  net: host
   restart: on-failure:5
   volumes_from:
     - syncthing-data
