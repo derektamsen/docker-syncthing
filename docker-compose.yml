@@ -16,4 +16,4 @@ app:
   net: host
   restart: on-failure:5
   volumes_from:
-    - syncthing-data
+    - data
