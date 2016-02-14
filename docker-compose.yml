@@ -1,19 +1,15 @@
 ---
-data:
-  container_name: syncthing-data
-  image: derektamsen/syncthing-data
-  volumes:
-    - /data
-  mem_limit: 512m
-  cpu_shares: 512
-
+version: '2'
 app:
   container_name: syncthing
   image: derektamsen/syncthing
   mem_limit: 512m
   cpu_shares: 512
   read_only: true
-  net: host
+  network_mode: host
   restart: on-failure:5
-  volumes_from:
-    - data
+  volumes:
+    - data:/data
+volumes:
+  data:
+    driver: local
