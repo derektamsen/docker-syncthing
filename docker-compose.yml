@@ -1,15 +1,16 @@
 ---
 version: '2'
-app:
-  container_name: syncthing
-  image: derektamsen/syncthing
-  mem_limit: 512m
-  cpu_shares: 512
-  read_only: true
-  network_mode: host
-  restart: on-failure:5
-  volumes:
-    - data:/data
+services:
+  app:
+    container_name: syncthing
+    image: derektamsen/syncthing
+    mem_limit: 512m
+    cpu_shares: 512
+    read_only: true
+    network_mode: host
+    restart: on-failure:5
+    volumes:
+      - data:/data
 volumes:
   data:
     driver: local
