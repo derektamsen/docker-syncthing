@@ -1,3 +1,5 @@
+[![](https://badge.imagelayers.io/derektamsen/syncthing:latest.svg)](https://imagelayers.io/?images=derektamsen/syncthing:latest 'Get your own badge on imagelayers.io')
+
 # docker-syncthing
 Docker syncthing container. This setup contains a data container used to store
 all of the syncthing folders will be persistently stored to the 'syncthing-data'
