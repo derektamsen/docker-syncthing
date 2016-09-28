@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   ca-certificates \
   syncthing
 
-EXPOSE 8384 22000 21025/udp 21026/udp
+EXPOSE 8384 22000
+EXPOSE 21027/udp
 
 USER user
 
