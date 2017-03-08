@@ -3,6 +3,7 @@ version: '2'
 services:
   syncthing:
     image: derektamsen/syncthing
+    build: ./
     mem_limit: 512m
     cpu_shares: 512
     read_only: true
