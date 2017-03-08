@@ -2,7 +2,9 @@ FROM alpine:3.5
 
 # create regular user
 RUN addgroup -S -g 5000 syncthing ;\
-  adduser -S -H -s /sbin/nologin -G syncthing -D -u 5000 syncthing
+  adduser -S -H -s /sbin/nologin -G syncthing -D -u 5000 syncthing \
+  && mkdir /data \
+  && chown syncthing:syncthing /data
 
 # install the services
 RUN apk update && apk --update add \
