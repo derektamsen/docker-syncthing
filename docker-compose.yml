@@ -1,8 +1,7 @@
 ---
 version: '2'
 services:
-  app:
-    container_name: syncthing
+  syncthing:
     image: derektamsen/syncthing
     mem_limit: 512m
     cpu_shares: 512
