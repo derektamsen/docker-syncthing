@@ -1,16 +1,17 @@
 ---
-version: '2'
+version: '3.2'
 services:
   syncthing:
     image: derektamsen/syncthing
     build: ./
-    mem_limit: 512m
-    cpu_shares: 512
     read_only: true
-    network_mode: host
     restart: on-failure:5
     volumes:
       - data:/data
+    ports:
+      - "8384:8384"
+      - "22000:22000"
+      - "21027:21027/udp"
 volumes:
   data:
     driver: local
