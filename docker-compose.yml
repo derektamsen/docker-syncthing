@@ -7,11 +7,15 @@ services:
     read_only: true
     restart: on-failure:5
     volumes:
-      - data:/data
+      - data-nfs:/data
     ports:
       - "8384:8384"
       - "22000:22000"
       - "21027:21027/udp"
 volumes:
-  data:
+  data-nfs:
     driver: local
+    driver_opts:
+      type: "nfs"
+      o: "addr=${NFS_SERVER},nolock,soft,rw"
+      device: ":${NFS_VOLUME_DATA}"
